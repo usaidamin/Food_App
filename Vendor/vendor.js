@@ -21,9 +21,12 @@ const productCollection = collection(db, "product")
 const ProductForm = document.getElementById("productForm")
 ProductForm.addEventListener("submit", addproduct)
 window.addEventListener("load", getProduct)
-window.addEventListener("load", loginUser)
+window.addEventListener("load", userLogin)
 const productParent = document.getElementById("productParent")
-function loginUser(){
+function userLogin(){
+    const loginUser = JSON.parse(localStorage.getItem("user"))
+
+    console.log(localStorage.getItem("user"))
     if (localStorage.getItem("user") === null) {
         window.location.replace("../Login/index.html")
         return
@@ -39,7 +42,7 @@ async function getProduct() {
     console.log("getProduct")
     const getProduct = await getDocs(productCollection)
     getProduct.forEach(function (doc) {
-        console.log(doc.data(), "|doc")
+        console.log(doc.data())
         productParent.innerHTML += `
         <div class="col-4 col-lg-4 col-md-6 col-sm-12 col-xsm-12 mt-5">
         <div class="card" style="width: 18rem;">

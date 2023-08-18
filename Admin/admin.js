@@ -29,7 +29,7 @@ async function getAllUser() {
         window.location.replace("../Login/index.html")
         return
     } else {
-        if (loginUser.type !== "admin") {
+        if (loginUser.type !== "Admin") {
             history.back()
             return
         }
@@ -38,7 +38,7 @@ async function getAllUser() {
     const docsRef = await getDocs(collection(db, "users"))
     docsRef.forEach((doc) => {
         const user = doc.data()
-        if (user.type !== "admin") {
+        if (user.type !== "Admin") {
             console.log("docs", doc.id, user)
             const rowUi = `<tr>
             <td>${user.fullName}</td>
