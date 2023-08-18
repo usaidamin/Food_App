@@ -28,7 +28,7 @@ function userLogin(){
 
     console.log(localStorage.getItem("user"))
     if (localStorage.getItem("user") === null) {
-        window.location.replace("../Login/index.html")
+        window.location.replace("../index.html")
         return
     } else {
         if (loginUser.type !== "Vendor") {
@@ -164,5 +164,5 @@ function uploadImage(file) {
 }
 logoutBtn.addEventListener("click", function () {
     localStorage.removeItem("user")
-    window.location.replace("../Login/index.html")
+    window.location.replace("../index.html")
 })

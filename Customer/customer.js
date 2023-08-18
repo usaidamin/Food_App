@@ -27,7 +27,7 @@ async function getProduct(){
 
     console.log(localStorage.getItem("user"))
     if (localStorage.getItem("user") === null) {
-        window.location.replace("../Login/index.html")
+        window.location.replace("../index.html")
         return
     } else {
         if (loginUser.type !== "Customer") {
@@ -56,5 +56,5 @@ async function getProduct(){
 
 logoutBtn.addEventListener("click", function () {
     localStorage.removeItem("user")
-    window.location.replace("../Login/index.html")
+    window.location.replace("../index.html")
 })

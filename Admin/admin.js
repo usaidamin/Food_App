@@ -26,7 +26,7 @@ async function getAllUser() {
 
     console.log(localStorage.getItem("user"))
     if (localStorage.getItem("user") === null) {
-        window.location.replace("../Login/index.html")
+        window.location.replace("../index.html")
         return
     } else {
         if (loginUser.type !== "Admin") {
@@ -77,7 +77,7 @@ async function handleAccountActivation(e) {
 
 logoutBtn.addEventListener("click", function () {
     localStorage.removeItem("user")
-    window.location.replace("../Login/index.html")
+    window.location.replace("../index.html")
 })
 
 window.handleAccountActivation = handleAccountActivation
